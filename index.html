@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Калькулятор ЗП</title>
+
+        <link rel = "Stylesheet" href = "styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+        <script src = "calculate.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Введите данные для расчёта зарплаты</h2>
+            <form id="dataForm">
+                <table id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>Количество смен</th>
+                            <th>Оформлено сотрудников</th>
+                            <th>Вышло сотрудников</th>
+                            <th>Зарплата</th>
+                            <th class="action-cell">Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="number" name="number_of_shifts[]" min="0" placeholder="0" required></td>
+                            <td><input type="number" name="issued_by_employees[]" min="0" placeholder="0" required></td>
+                            <td><input type="number" name="out_of_staff[]" min="0" step="0.01" placeholder="0.00" required></td>
+                            <td><input type="number" name="salary[]" placeholder="0" readonly></td>
+                            <td class="action-cell">
+                                <button type="button" class="action-btn pin-btn" onclick="togglePin(this)" title="Закрепить строку">
+                                    <i class="fas fa-thumbtack"></i>
+                                </button>
+                                <button type="button" class="action-btn delete-btn" onclick="deleteRow(this)" title="Удалить строку">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="button-container">
+                    <button type="button" onclick="addRow()">Добавить строку</button>
+                </div>
+            </form>
+        </div>
+
+    </body>
+</html>
