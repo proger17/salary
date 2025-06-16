@@ -7,7 +7,7 @@ function addRow() {
     newRow.innerHTML = `
         <td><input type="number" name="number_of_shifts[]" min="0" placeholder="0" required></td>
         <td><input type="number" name="issued_by_employees[]" min="0" placeholder="0" required></td>
-        <td><input type="number" name="out_of_staff[]" min="0" step="0.01" placeholder="0.00" required></td>
+        <td><input type="number" name="out_of_staff[]" min="0" placeholder="0" required></td>
         <td><input type="number" name="salary[]" placeholder="0" readonly></td>
         <td class="action-cell">
             <button type="button" class="action-btn pin-btn" onclick="togglePin(this)" title="Закрепить строку">
@@ -85,7 +85,7 @@ function addRow() {
     newRow.innerHTML = `
         <td><input type="number" name="number_of_shifts[]" min="0" placeholder="0" required></td>
         <td><input type="number" name="issued_by_employees[]" min="0" placeholder="0" required></td>
-        <td><input type="number" name="out_of_staff[]" min="0" step="0.01" placeholder="0.00" required></td>
+        <td><input type="number" name="out_of_staff[]" min="0" placeholder="0" required></td>
         <td><input type="number" name="salary[]" placeholder="0" readonly></td>
 
         <td class="action-cell">
@@ -119,10 +119,10 @@ function calculateRow(row) {
     ];
 
     var b12 = [
-        [20, 140, 160, 180, 200],
-        [25, 150, 170, 190, 210],
-        [30, 160, 180, 200, 220],
-        [35, 170, 190, 210, 230]
+        [0, 0, 0, 0, 0],
+        [70, 90, 100, 120, 140],
+        [75, 110, 120, 140, 160],
+        [80, 130, 140, 160, 180]
     ];
     
     switch (true) {
@@ -166,20 +166,20 @@ function calculateRow(row) {
     var j2 = 0;
 
     var b21 = [
-        0, 30, 50
+        0, 150, 180
     ];
 
     var b22 = [
-        [70, 220, 270, 320, 370],
-        [80, 230, 280, 330, 380],
-        [90, 240, 290, 340, 390]
+        [130, 220, 270, 320, 370],
+        [160, 230, 280, 330, 380],
+        [190, 240, 290, 340, 390]
     ];
 
     switch (true) {
-        case (out_of_staff <= 69):
+        case (out_of_staff <= 59):
             i2 = 0;
             break;
-        case (70 <= out_of_staff && out_of_staff <= 99):
+        case (60 <= out_of_staff && out_of_staff <= 99):
             i2 = 1;
             break;
         case (out_of_staff >= 100):
