@@ -141,7 +141,7 @@ function calculateRow(row) {
     }
 
     switch (true) {
-        case (CR2 < 50 || CR2 >= 85):
+        case (CR2 < 50):
             j1 = -1;
             break;
         case (50 <= CR2 && CR2 < 55):
