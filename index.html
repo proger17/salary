@@ -19,6 +19,7 @@
                             <th>Количество смен</th>
                             <th>Оформлено сотрудников</th>
                             <th>Вышло сотрудников</th>
+                            <th>Конверсия (CR2)</th>
                             <th>Зарплата</th>
                             <th class="action-cell">Действия</th>
                         </tr>
@@ -28,6 +29,7 @@
                             <td><input type="number" name="number_of_shifts[]" min="0" placeholder="0" required></td>
                             <td><input type="number" name="issued_by_employees[]" min="0" placeholder="0" required></td>
                             <td><input type="number" name="out_of_staff[]" min="0" placeholder="0" required></td>
+                            <td><input type="text" name="cr2_percent[]" placeholder="0" readonly></td>
                             <td><input type="number" name="salary[]" placeholder="0" readonly></td>
                             <td class="action-cell">
                                 <button type="button" class="action-btn pin-btn" onclick="togglePin(this)" title="Закрепить строку">
@@ -45,6 +47,5 @@
                 </div>
             </form>
         </div>
-
     </body>
 </html>

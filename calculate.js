@@ -86,6 +86,7 @@ function addRow() {
         <td><input type="number" name="number_of_shifts[]" min="0" placeholder="0" required></td>
         <td><input type="number" name="issued_by_employees[]" min="0" placeholder="0" required></td>
         <td><input type="number" name="out_of_staff[]" min="0" placeholder="0" required></td>
+        <td><input type="text" name="cr2_percent[]" placeholder="0" readonly></td>
         <td><input type="number" name="salary[]" placeholder="0" readonly></td>
 
         <td class="action-cell">
@@ -109,7 +110,13 @@ function calculateRow(row) {
     const out_of_staff = parseFloat(row.querySelector('input[name="out_of_staff[]"]').value) || 0;
 
     const fixed_salary = number_of_shifts * 3000;
-    const CR2 = (parseFloat(out_of_staff) / parseFloat(issued_by_employees)) * 100;
+    var CR2 = 0;
+
+    if (parseFloat(issued_by_employees) != 0) {
+        CR2 = (parseFloat(out_of_staff) / parseFloat(issued_by_employees)) * 100;
+    }
+
+    row.querySelector('input[name="cr2_percent[]"]').value = String(CR2.toFixed(2)) + "%";
 
     var i1 = 0;
     var j1 = 0;
